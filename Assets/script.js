@@ -21,7 +21,7 @@
     
     //Questions
     //create objects with properties: question, choices and a method that holds correct answer as a boolean
-    var questionsObj = [
+    var questionsArray = [
         {   questionPrompt: "Who is the best climber in all the land?", //qestion[0].questionPrompt
             optionA: "Tommy Caldwell",
             optionB: "Alex Megos",
@@ -52,15 +52,17 @@
         },
 
     ];   
-   
+    //Interval of questionsArray
+    var runningQuestion = 0;
+    var lastQuestion = questionsArray.length - 1;
     //this is the user information that will be appended to the cache
     var playerInfo = {
         score: 0,
         initials: "",
     }
     //Call functions
-    renderQuestion();
-    console.log(renderQuestion(),"renderQuestion function")
+    // renderQuestion();
+    // console.log(renderQuestion(),"renderQuestion function")
 //Functions
     //function for timer
     function setTime() {
@@ -87,21 +89,25 @@
 
     function startQuiz(){
         start.style.display = "none";
-        setTime();
-        renderQuestion()
+        renderQuestion();
         quiz.style.display = "block";
+        setTime();
     }
     //functions for questions
     function renderQuestion(){
-        let q = questionsObj[0];
+        let q = questionsArray[runningQuestion];
         question.innerHTML = "<p>" + q.questionPrompt + "</p>";
-        choiceA.innerHTML = q.choiceA;
-        choiceB.innerHTML = q.choiceB;
-        choiceC.innerHTML = q.choiceC;
-        choiceD.innerHTML = q.choiceD;
+        choiceA.innerHTML = q.optionA;
+        choiceB.innerHTML = q.optionB;
+        choiceC.innerHTML = q.optionC;
+        choiceD.innerHTML = q.optionD;
     }
+    start.style.display = "none";
+    renderQuestion();
+    quiz.style.display = "block"
+
     function checkAnswer(playerAnswer){
-        if(questionsObj[0].answer == playerAnswer) {
+        if(questionsArray[0].answer == playerAnswer) {
             playerInfo.score++;
         }
         else{
