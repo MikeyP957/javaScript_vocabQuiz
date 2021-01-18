@@ -40,10 +40,29 @@ console.log(question1.checkResponse(question1.optionB), "Does this log as false?
         score: 0,
         initials: "",
     }
-
-
-
+    //time set for the game clock
+    var secondsLeft = 20;
+//Functions
+    function setTime() {
+        // Sets interval in variable
+        var timerInterval = setInterval(function() {
+        secondsLeft--;
+        timeEl.textContent = secondsLeft + " seconds left till game ends.";
     
+        if(secondsLeft === 0) {
+            // Stops execution of action at set interval
+            clearInterval(timerInterval);
+            // Calls function to create and append image
+            sendMessage();
+        }
+    
+        }, 1000);
+    }
+    function sendMessage() {
+        timeEl.textContent= " ";
+        
+    }
+
 // AS A coding boot camp student
 // I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
 // SO THAT I can gauge my progress compared to my peers
