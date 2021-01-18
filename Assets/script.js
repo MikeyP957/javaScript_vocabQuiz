@@ -29,6 +29,27 @@
             optionD: "Janja Garnbredt", 
             answer: "A" //question[0].answer
         },
+        {   questionPrompt: "Who is the stinkiest cat in the house?", //qestion[0].questionPrompt
+            optionA: "Peaches",
+            optionB: "Mac Mittens",
+            optionC: "Sven",
+            optionD: "Bennie", 
+            answer: "C" //question[0].answer
+        },
+        {   questionPrompt: "Who is the most mediocre baseball team in the MLB?", //qestion[0].questionPrompt
+            optionA: "The Toronto Blue Jays",
+            optionB: "The Seattle Mariners",
+            optionC: "The Chicago Cubs",
+            optionD: "Los Angeles Dodgers", 
+            answer: "B" //question[0].answer
+        },
+        {   questionPrompt: "Who has the best mustache?", //qestion[0].questionPrompt
+            optionA: "Joe Biden",
+            optionB: "John Oliver",
+            optionC: "Kenan Thompson",
+            optionD: "Mikey P", 
+            answer: "D" //question[0].answer
+        },
 
     ];   
    
