@@ -5,7 +5,9 @@
     var mainEl = document.getElementById("main");
     //time set for the game clock
     var secondsLeft = 20;
-
+    //Buttons
+    var startGameButton = document.querySelector("#startGame")
+    
     //Questions
     //create objects with properties: question, choices and a method that holds correct answer as a boolean
     var question1 = {
@@ -63,7 +65,7 @@ console.log(question1.checkResponse(question1.optionA), "Does this log as true?"
     }
     function sendMessage() {
         timeEl.textContent= " ";
-        
+
     }
 
 // AS A coding boot camp student
