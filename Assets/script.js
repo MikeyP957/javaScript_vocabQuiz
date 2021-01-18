@@ -1,8 +1,8 @@
 //Global Variables
     //get elements in html
-   var start = document.getElementById(start);
-   var quiz = document.getElementById(quiz);
-   var question = document.getElementById(question);
+   var start = document.getElementById("start");
+   var quiz = document.getElementById("quiz");
+   var question = document.getElementById("question");
    var choiceA = document.getElementById("A");
    var choiceB = document.getElementById("B");
    var choiceC = document.getElementById("C");
@@ -37,7 +37,9 @@
         score: 0,
         initials: "",
     }
-   
+    //Call functions
+    renderQuestion();
+    console.log(renderQuestion(),"renderQuestion function")
 //Functions
     //functions for questions
     function renderQuestion(){
