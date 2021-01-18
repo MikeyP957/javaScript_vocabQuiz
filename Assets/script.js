@@ -1,4 +1,11 @@
 //Global Variables
+    // Selects element by class
+    var timeEl = document.querySelector(".time");
+    // Selects element by id
+    var mainEl = document.getElementById("main");
+    //time set for the game clock
+    var secondsLeft = 20;
+
     //Questions
     //create objects with properties: question, choices and a method that holds correct answer as a boolean
     var question1 = {
@@ -7,18 +14,15 @@
         optionB: "Alex Megos",
         optionC: "Adam Ondra",
         optionD: "Janja Garnbredt",
-        checkResponse: function() {
-            
-            if(this.optionA){
-                return true;
-            }
-            else {
-                return false;
-            }
+        checkResponse: function() {   
+            //is it possible for this method take in on of its properties and return either true or false         
+            let choice = "Tommy Caldwell"; //I need to make this change according to a click
+            if(choice === this.optionA){return true;}
+            else {return false;}
         }
-    }
+    };
 console.log(question1.checkResponse(question1.optionA), "Does this log as true?")
-console.log(question1.checkResponse(question1.optionB), "Does this log as false?")
+
 
     var question2 = {
 
@@ -40,8 +44,7 @@ console.log(question1.checkResponse(question1.optionB), "Does this log as false?
         score: 0,
         initials: "",
     }
-    //time set for the game clock
-    var secondsLeft = 20;
+   
 //Functions
     function setTime() {
         // Sets interval in variable
