@@ -1,16 +1,25 @@
 //Global Variables
+    //get elements in html
+   var start = document.getElementById(start);
+   var quiz = document.getElementById(quiz);
+   var question = document.getElementById(question);
+   var choiceA = document.getElementById("A");
+   var choiceB = document.getElementById("B");
+   var choiceC = document.getElementById("C");
+   var choiceD = document.getElementById("D");
+
     // Selects element by class
     var timeEl = document.querySelector(".time");
     // Selects element by id
     var mainEl = document.getElementById("main");
     //time set for the game clock
     var secondsLeft = 20;
-    //Buttons
-    var startGameButton = document.querySelector("#startGame")
+  
+    
     
     //Questions
     //create objects with properties: question, choices and a method that holds correct answer as a boolean
-    var questions = [
+    var questionsObj = [
         {   questionPrompt: "Who is the best climber in all the land?", //qestion[0].questionPrompt
             optionA: "Tommy Caldwell",
             optionB: "Alex Megos",
