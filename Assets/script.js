@@ -37,6 +37,16 @@
     }
    
 //Functions
+
+    function renderQuestion(){
+        let q = questionsObj[0];
+        question.innerHTML = "<p>" + q.questionPrompt + "</p>";
+        choiceA.innerHTML = q.choiceA;
+        choiceB.innerHTML = q.choiceB;
+        choiceC.innerHTML = q.choiceC;
+        choiceD.innerHTML = q.choiceD;
+    }
+
     function setTime() {
         // Sets interval in variable
         var timerInterval = setInterval(function() {
