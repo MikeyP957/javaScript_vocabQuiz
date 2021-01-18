@@ -107,13 +107,17 @@
     quiz.style.display = "block"
 
     function checkAnswer(playerAnswer){
-        if(questionsArray[0].answer == playerAnswer) {
+        if(questionsArray[runningQuestion].answer == playerAnswer) {
             playerInfo.score++;
         }
         else{
             questionTime--
         }
 
+        if(runningQuestion < lastQuestion){
+            runningQuestion++;
+            renderQuestion();
+        }
     }
 
     
