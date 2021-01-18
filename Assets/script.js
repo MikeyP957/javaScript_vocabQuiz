@@ -71,6 +71,15 @@
         choiceC.innerHTML = q.choiceC;
         choiceD.innerHTML = q.choiceD;
     }
+    function checkAnswer(playerAnswer){
+        if(questionsObj[0].answer == playerAnswer) {
+            playerInfo.score++;
+        }
+        else{
+            questionTime--
+        }
+        
+    }
 
     //function for timer
         function setTime() {
