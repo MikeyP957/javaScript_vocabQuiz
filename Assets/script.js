@@ -8,14 +8,16 @@
    var choiceC = document.getElementById("C");
    var choiceD = document.getElementById("D");
 
-    // Selects element by class
-    var timeEl = document.querySelector(".time");
-    // Selects element by id
-    var mainEl = document.getElementById("main");
-    //time set for the game clock
-    var secondsLeft = 20;
+    // // Selects element by class
+    // var timeEl = document.querySelector(".time");
+    // // Selects element by id
+    // var mainEl = document.getElementById("main");
+    // //time set for the game clock
+    // var secondsLeft = 20;
   
-    
+    //counter variables
+    var questionTime = 20;
+
     
     //Questions
     //create objects with properties: question, choices and a method that holds correct answer as a boolean
@@ -37,7 +39,7 @@
     }
    
 //Functions
-
+    //functions for questions
     function renderQuestion(){
         let q = questionsObj[0];
         question.innerHTML = "<p>" + q.questionPrompt + "</p>";
@@ -47,25 +49,26 @@
         choiceD.innerHTML = q.choiceD;
     }
 
-    function setTime() {
-        // Sets interval in variable
-        var timerInterval = setInterval(function() {
-        secondsLeft--;
-        timeEl.textContent = secondsLeft + " seconds left till game ends.";
-    
-        if(secondsLeft === 0) {
-            // Stops execution of action at set interval
-            clearInterval(timerInterval);
-            // Calls function to create and append image
-            sendMessage();
+    //function for timer
+        function setTime() {
+            // Sets interval in variable
+            var timerInterval = setInterval(function() {
+            secondsLeft--;
+            questionTime.textContent = secondsLeft + " seconds left till game ends.";
+        
+            if(secondsLeft === 0) {
+                // Stops execution of action at set interval
+                clearInterval(timerInterval);
+                // Calls function to create and append image
+                sendMessage();
+            }
+        
+            }, 1000);
         }
-    
-        }, 1000);
-    }
-    function sendMessage() {
-        timeEl.textContent= " ";
+        function sendMessage() {
+            questionTime.textContent= " ";
 
-    }
+        }
 
 // AS A coding boot camp student
 // I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
