@@ -1,5 +1,6 @@
 //Global Variables
     //Questions
+    //create objects with properties: question, choices and a method that holds correct answer as a boolean
     var question1 = {
         questionPrompt: "Who is the best climber in all the land?" ,
         optionA: "Tommy Caldwell",
@@ -7,6 +8,7 @@
         optionC: "Adam Ondra",
         optionD: "Janja Garnbredt",
         checkResponse: function() {
+            
             if(this.optionA){
                 return true;
             }
@@ -33,6 +35,15 @@ console.log(question1.checkResponse(question1.optionB), "Does this log as false?
     var question5 = {
 
     }
+    //this is the user information that will be appended to the cache
+    var playerInfo = {
+        score: 0,
+        initials: "",
+    }
+
+
+
+    
 // AS A coding boot camp student
 // I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
 // SO THAT I can gauge my progress compared to my peers
@@ -46,7 +57,7 @@ console.log(question1.checkResponse(question1.optionB), "Does this log as false?
 
 // WHEN I answer a question (for Loop, create an array of randomly assigned questions and then iterate)
     //How to make a question...
-    //create objects with propoerties: question, answer w,x,y,z are booleons
+    
     //on click check to see if it is true, 
     // else take away seconds from timer
 // THEN I am presented with another question
