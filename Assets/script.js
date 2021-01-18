@@ -10,37 +10,17 @@
     
     //Questions
     //create objects with properties: question, choices and a method that holds correct answer as a boolean
-    var question1 = {
-        questionPrompt: "Who is the best climber in all the land?" ,
-        optionA: "Tommy Caldwell",
-        optionB: "Alex Megos",
-        optionC: "Adam Ondra",
-        optionD: "Janja Garnbredt",
-        checkResponse: function() {   
-            //is it possible for this method take in on of its properties and return either true or false         
-            let choice = "Tommy Caldwell"; //I need to make this change according to a click
-            if(choice === this.optionA){return true;}
-            else {return false;}
-        }
-    };
-console.log(question1.checkResponse(question1.optionA), "Does this log as true?")
+    var questions = [
+        {   questionPrompt: "Who is the best climber in all the land?" ,
+            optionA: "Tommy Caldwell",
+            optionB: "Alex Megos",
+            optionC: "Adam Ondra",
+            optionD: "Janja Garnbredt", 
+            answer: "A"           
+        },
 
-
-    var question2 = {
-
-    }
-
-    var question3 = {
-
-    }
-
-    var question4 = {
-
-    }
-
-    var question5 = {
-
-    }
+    ];   
+   
     //this is the user information that will be appended to the cache
     var playerInfo = {
         score: 0,
