@@ -11,12 +11,12 @@
     //Questions
     //create objects with properties: question, choices and a method that holds correct answer as a boolean
     var questions = [
-        {   questionPrompt: "Who is the best climber in all the land?" ,
+        {   questionPrompt: "Who is the best climber in all the land?", //qestion[0].questionPrompt
             optionA: "Tommy Caldwell",
             optionB: "Alex Megos",
             optionC: "Adam Ondra",
             optionD: "Janja Garnbredt", 
-            answer: "A"           
+            answer: "A" //question[0].answer
         },
 
     ];   

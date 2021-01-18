@@ -20,13 +20,21 @@
     <!--Container where the game is played and inital message of rules
         and start button-->
         <section class="container">
-            <h3>Javascript Vocabulary Quiz</h3>
-            <div class="row">
-                <div id="gameCenter" class="col -4, justify-content-center">
-                    <p>The game will go here</p>
-                    <button id="startGame" class="btn btn-primary" type="submit">Click here to Start!</button>
-                    
+            <div id="start"> start quiz</div>
+            <!--The quiz goes here-->
+            <div id="quiz" style = "display: none;">
+                <div id="question">
+                    <p>Question</p> 
                 </div>
+                <div id="choices">
+                    <div class="choice" id="A"></div>
+                    <div class="choice" id="B"></div>
+                    <div class="choice" id="C"></div>
+                    <div class="choice" id="D"></div>
+                </div>                
+            </div>
+            <div id="scoreContainer" style = "display: none;">
+
             </div>
         </section>
     <!--container for timer above the question-->
