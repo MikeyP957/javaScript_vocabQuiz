@@ -1,3 +1,38 @@
+//Global Variables
+    //Questions
+    var question1 = {
+        questionPrompt: "Who is the best climber in all the land?" ,
+        optionA: "Tommy Caldwell",
+        optionB: "Alex Megos",
+        optionC: "Adam Ondra",
+        optionD: "Janja Garnbredt",
+        checkResponse: function() {
+            if(this.optionA){
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    }
+console.log(question1.checkResponse(question1.optionA), "Does this log as true?")
+console.log(question1.checkResponse(question1.optionB), "Does this log as false?")
+
+    var question2 = {
+
+    }
+
+    var question3 = {
+
+    }
+
+    var question4 = {
+
+    }
+
+    var question5 = {
+
+    }
 // AS A coding boot camp student
 // I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
 // SO THAT I can gauge my progress compared to my peers
