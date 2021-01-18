@@ -62,6 +62,35 @@
     renderQuestion();
     console.log(renderQuestion(),"renderQuestion function")
 //Functions
+    //function for timer
+    function setTime() {
+        // Sets interval in variable
+        var timerInterval = setInterval(function() {
+        secondsLeft--;
+        questionTime.textContent = secondsLeft + " seconds left till game ends.";
+    
+        if(secondsLeft === 0) {
+            // Stops execution of action at set interval
+            clearInterval(timerInterval);
+            // Calls function to create and append image
+            sendMessage();
+        }
+    
+        }, 1000);
+    }
+    function sendMessage() {
+        questionTime.textContent= " ";
+
+    }
+    //functions to start quiz
+        start.addEventListener("click", startQuiz);
+
+    function startQuiz(){
+        start.style.display = "none";
+        setTime();
+        renderQuestion()
+        quiz.style.display = "block";
+    }
     //functions for questions
     function renderQuestion(){
         let q = questionsObj[0];
@@ -78,29 +107,10 @@
         else{
             questionTime--
         }
-        
+
     }
 
-    //function for timer
-        function setTime() {
-            // Sets interval in variable
-            var timerInterval = setInterval(function() {
-            secondsLeft--;
-            questionTime.textContent = secondsLeft + " seconds left till game ends.";
-        
-            if(secondsLeft === 0) {
-                // Stops execution of action at set interval
-                clearInterval(timerInterval);
-                // Calls function to create and append image
-                sendMessage();
-            }
-        
-            }, 1000);
-        }
-        function sendMessage() {
-            questionTime.textContent= " ";
-
-        }
+    
 
 // AS A coding boot camp student
 // I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
