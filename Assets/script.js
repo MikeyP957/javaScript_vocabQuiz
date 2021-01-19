@@ -7,6 +7,7 @@
    var choiceB = document.getElementById("B");
    var choiceC = document.getElementById("C");
    var choiceD = document.getElementById("D");
+   var scoreCard = document.getElementById("scoreContainer")
 
     // Selects element by class
     var timeEl = document.querySelector(".time");
@@ -19,8 +20,8 @@
     var questionTime = 20;
 
     
-    //Questions
-    //create objects with properties: question, choices and a method that holds correct answer as a boolean
+    //Questions: Each index is an object with properties:
+        //questionPrompt, optionA, optionB...optionD and answer
     var questionsArray = [
         {   questionPrompt: "Who is the best climber in all the land?", //qestion[0].questionPrompt
             optionA: "Tommy Caldwell",
@@ -63,6 +64,7 @@
     //Call functions
     startQuiz();
     renderQuestion();
+    scoreRender();
     
 //Functions
     //function for timer
@@ -106,6 +108,7 @@
         choiceC.innerHTML = q.optionC;
         choiceD.innerHTML = q.optionD;
 
+        scoreRender();
         console.log("render question running")
     }
     // start.style.display = "none";
@@ -124,10 +127,20 @@
             runningQuestion++;
             renderQuestion();
         }
+        else {
+            //end the quiz and show score
+        }
         console.log("check answer running");
         console.log(playerInfo.score)
     }
+    //show the score
+    function scoreRender() {
+        scoreCard.style.display = "block";
+        let score = playerInfo.score;
+        scoreCard.innerHTML = score
 
+        console.log("scoreRender is running")
+    }
     
 
 // AS A coding boot camp student
