@@ -61,8 +61,9 @@
         initials: "",
     }
     //Call functions
-    // renderQuestion();
-    // console.log(renderQuestion(),"renderQuestion function")
+    startQuiz();
+    renderQuestion();
+    
 //Functions
     //function for timer
     function setTime() {
@@ -104,12 +105,12 @@
         choiceB.innerHTML = q.optionB;
         choiceC.innerHTML = q.optionC;
         choiceD.innerHTML = q.optionD;
-        
+
         console.log("render question running")
     }
-    start.style.display = "none";
-    renderQuestion();
-    quiz.style.display = "block"
+    // start.style.display = "none";
+    // renderQuestion();
+    // quiz.style.display = "block"
 
     function checkAnswer(playerAnswer){
         if(questionsArray[runningQuestion].answer == playerAnswer) {
@@ -124,6 +125,7 @@
             renderQuestion();
         }
         console.log("check answer running");
+        console.log(playerInfo.score)
     }
 
     
