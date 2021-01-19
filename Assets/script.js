@@ -71,7 +71,7 @@
         // Sets interval in variable
         var timerInterval = setInterval(function() {
         secondsLeft--;
-        questionTime.textContent = secondsLeft + " seconds left till game ends.";
+        timeEl.textContent = secondsLeft + " seconds left in game.";
     
         if(secondsLeft === 0) {
             // Stops execution of action at set interval
@@ -119,7 +119,7 @@
             playerInfo.score++;
         }
         else{
-            questionTime--
+            questionTime--;
         }
 
         if(runningQuestion < lastQuestion){
