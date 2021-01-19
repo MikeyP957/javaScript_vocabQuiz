@@ -137,7 +137,7 @@
     function scoreRender() {
         scoreCard.style.display = "block";
         let score = playerInfo.score;
-        scoreCard.innerHTML = score
+        scoreCard.innerHTML = "Score: " + score
 
         console.log("scoreRender is running")
     }
