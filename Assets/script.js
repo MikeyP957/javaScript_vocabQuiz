@@ -18,7 +18,6 @@
   
     //counter variables
     var questionTime = 20;
-
     
     //Questions: Each index is an object with properties:
         //questionPrompt, optionA, optionB...optionD and answer
@@ -61,7 +60,7 @@
         score: 0,
         initials: "",
     }
-    //Call functions
+//Call functions
     startQuiz();
     renderQuestion();
     scoreRender();
@@ -108,7 +107,7 @@
         choiceC.innerHTML = q.optionC;
         choiceD.innerHTML = q.optionD;
 
-        scoreRender();
+        
         console.log("render question running")
     }
     // start.style.display = "none";
@@ -130,6 +129,7 @@
         else {
             //end the quiz and show score
         }
+        scoreRender();
         console.log("check answer running");
         console.log(playerInfo.score)
     }
