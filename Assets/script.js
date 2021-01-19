@@ -8,12 +8,12 @@
    var choiceC = document.getElementById("C");
    var choiceD = document.getElementById("D");
 
-    // // Selects element by class
-    // var timeEl = document.querySelector(".time");
-    // // Selects element by id
-    // var mainEl = document.getElementById("main");
-    // //time set for the game clock
-    // var secondsLeft = 20;
+    // Selects element by class
+    var timeEl = document.querySelector(".time");
+    // Selects element by id
+    var mainEl = document.getElementById("main");
+    //time set for the game clock
+    var secondsLeft = 20;
   
     //counter variables
     var questionTime = 20;
@@ -79,6 +79,7 @@
         }
     
         }, 1000);
+        console.log("set timer running")
     }
     function sendMessage() {
         questionTime.textContent= " ";
@@ -92,6 +93,8 @@
         renderQuestion();
         quiz.style.display = "block";
         setTime();
+
+        console.log("start quiz running")
     }
     //functions for questions
     function renderQuestion(){
@@ -101,6 +104,8 @@
         choiceB.innerHTML = q.optionB;
         choiceC.innerHTML = q.optionC;
         choiceD.innerHTML = q.optionD;
+        
+        console.log("render question running")
     }
     start.style.display = "none";
     renderQuestion();
@@ -118,6 +123,7 @@
             runningQuestion++;
             renderQuestion();
         }
+        console.log("check answer running");
     }
 
     
