@@ -83,8 +83,8 @@
         console.log("set timer running")
     }
     function gameOver() {
-        questionTime.textContent= "The game is over.";
-
+        secondsLeft.textContent= "The game is over.";
+        console.log("game over")
     }
     //functions to start quiz
         start.addEventListener("click", startQuiz);
@@ -115,7 +115,7 @@
             playerInfo.score++;
         }
         else{
-            questionTime--;
+            secondsLeft--;
         }
 
         if(runningQuestion < lastQuestion){
