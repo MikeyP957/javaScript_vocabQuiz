@@ -15,9 +15,6 @@
     var mainEl = document.getElementById("main");
     //time set for the game clock
     var secondsLeft = 20;
-  
-    //counter variables
-    var questionTime = 20;
     
     //Questions: Each index is an object with properties:
         //questionPrompt, optionA, optionB...optionD and answer
@@ -62,7 +59,9 @@
     }
 //Call functions
     startQuiz();
+    start.style.display = "none";
     renderQuestion();
+    quiz.style.display = "block"
     scoreRender();
     
 //Functions
@@ -77,14 +76,14 @@
             // Stops execution of action at set interval
             clearInterval(timerInterval);
             // Calls function to create and append image
-            sendMessage();
+            gameOver();
         }
     
         }, 1000);
         console.log("set timer running")
     }
-    function sendMessage() {
-        questionTime.textContent= " ";
+    function gameOver() {
+        questionTime.textContent= "The game is over.";
 
     }
     //functions to start quiz
@@ -110,10 +109,7 @@
         
         console.log("render question running")
     }
-    // start.style.display = "none";
-    // renderQuestion();
-    // quiz.style.display = "block"
-
+   
     function checkAnswer(playerAnswer){
         if(questionsArray[runningQuestion].answer == playerAnswer) {
             playerInfo.score++;
