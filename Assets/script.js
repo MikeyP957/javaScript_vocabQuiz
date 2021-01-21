@@ -127,13 +127,32 @@
         scoreCard.innerHTML = "Score: " + score;
         console.log("scoreRender is running")
     }
-  
+    function highScoreRender() {
+        // Clear scoreList element and update finalScore
+        scoreList.innerHTML = "";
+        finalScore.textContent = scores.length;
+      
+        // Render a new li for each player
+        for (var i = 0; i < scores.length; i++) {
+          var player = scores[i];
+      
+          var li = document.createElement("li");
+          li.textContent = player;
+          li.setAttribute("data-index", i);
+      
+          var score = document.createElement("p");
+          score.textContent = totalPoints + " points";
+      
+          li.appendChild(score);
+          scoreList.appendChild(li);
+        }
+      }
     
 
 
 
 
-    
+
 //     //save high scores
 //     highscores.push(newScore);
 //     window.localStorage.setItem("highscores", JSON.stringify(highscores));
