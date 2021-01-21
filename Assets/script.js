@@ -186,27 +186,25 @@ initialsForm.addEventListener("submit", function(event) {
   });
 
 
+// Add click event to scoreList element
+scoreList.addEventListener("click", function(event) {
+    var element = event.target;
+  
+    // Checks if element is a button
+    if (element.matches("button") === true) {
+      // Get its data-index value and remove the todo element from the list
+      var index = element.parentElement.getAttribute("data-index");
+      scores.splice(index, 1);
+  
+      // Store updated scores in localStorage, re-render the list
+      storeScores();
+      highScoreRender();
+    }
+  });
+  
+  // Calls init to retrieve data and render it to the page on load
+  init()
+      
+start.addEventListener("click", startQuiz);
 
-//     //save high scores
-//     highscores.push(newScore);
-//     window.localStorage.setItem("highscores", JSON.stringify(highscores));
-
-// //Event listeners for buttons
-//     //functions to start quiz
-    
-    start.addEventListener("click", startQuiz);
-
-    // playerSubmit.addEventListener("click", )
-    
-    // function clearHighscores() {
-    //     window.localStorage.removeItem("highscores");
-    //     window.location.reload();
-    //   }
-// AS A coding boot camp student
-// I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-// SO THAT I can gauge my progress compared to my peers
-
-// THEN I can save my initials and my score
-        //use the cache to create object with score and intials consecutive correct questions?
-// ```
-
+  
