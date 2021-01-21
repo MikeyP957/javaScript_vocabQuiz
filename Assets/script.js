@@ -147,7 +147,19 @@
           scoreList.appendChild(li);
         }
       }
-    
+    // This function is being called below and will run when the page loads.
+function init() {
+    // Get stored scores from localStorage
+    var storedscores = JSON.parse(localStorage.getItem("scores"));
+  
+    // If scores were retrieved from localStorage, update the scores array to it
+    if (storedscores !== null) {
+      scores = storedscores;
+    }
+  
+    // This is a helper function that will render scores to the DOM
+    highScoreRender();
+  }
 
 
 
