@@ -8,13 +8,13 @@
    var choiceC = document.getElementById("C");
    var choiceD = document.getElementById("D");
    var scoreCard = document.getElementById("scoreContainer")
-
+   var userInput = document.getElementById("inputForm")
     // Selects element by class
     var timeEl = document.querySelector(".time");
     // Selects element by id
     var mainEl = document.getElementById("main");
     //time set for the game clock
-    var secondsLeft = 20;
+    var secondsLeft = 10;
     
     //Questions: Each index is an object with properties:
         //questionPrompt, optionA, optionB...optionD and answer
@@ -51,52 +51,45 @@
     ];   
     //Interval of questionsArray
     var runningQuestion = 0;
+    //the index of the last question in questions array
     var lastQuestion = questionsArray.length - 1;
     //this is the user information that will be appended to the cache
     var playerInfo = {
         score: 0,
         initials: "",
-    }
-//Call functions
-    startQuiz();
-    start.style.display = "none";
-    renderQuestion();
-    quiz.style.display = "block"
-    scoreRender();
+    };
+
+    
     
 //Functions
     //function for timer
-    function setTime() {
-        // Sets interval in variable
-        var timerInterval = setInterval(function() {
-        secondsLeft--;
-        timeEl.textContent = secondsLeft + " seconds left in game.";
-    
-        if(secondsLeft === 0) {
-            // Stops execution of action at set interval
-            clearInterval(timerInterval);
-            // Calls function to create and append image
-            gameOver();
-        }
-    
-        }, 1000);
-        console.log("set timer running")
-    }
-    function gameOver() {
-        secondsLeft.textContent= "The game is over.";
-        console.log("game over")
-    }
-    //functions to start quiz
-        start.addEventListener("click", startQuiz);
-
     function startQuiz(){
+        //start timer
+        var timerInterval = setInterval(function() {
+            secondsLeft--;
+            timeEl.textContent = secondsLeft + " seconds left in game.";
+        //when time runs out run gameOver()
+            if(secondsLeft === 0) {
+                // Stops execution of action at set interval
+                clearInterval(timerInterval);
+                // Calls function to create and append image
+                gameOver();
+            }            
+        }, 1000);;
         start.style.display = "none";
         renderQuestion();
-        quiz.style.display = "block";
-        setTime();
-
-        console.log("start quiz running")
+        quiz.style.display = "block";        
     }
+          
+    
+    function gameOver() {
+        timeEl.style.display = "none";
+        console.log("game over")
+        quiz.style.display = "none";
+        
+        scoreRender();
+    }
+   
     //functions for questions
     function renderQuestion(){
         let q = questionsArray[runningQuestion];
@@ -122,8 +115,10 @@
             runningQuestion++;
             renderQuestion();
         }
+        
         else {
-            //end the quiz and show score
+            secondsLeft = 0;
+            gameOver();
         }
         scoreRender();
         console.log("check answer running");
@@ -134,10 +129,24 @@
         scoreCard.style.display = "block";
         let score = playerInfo.score;
         scoreCard.innerHTML = "Score: " + score
-
+        userInput.style.display = "block"
         console.log("scoreRender is running")
     }
+
+
+    //look into append and append child
     
+    //game over 
+ 
+    //save high scores
+    function saveHighScores(){
+        var playerInitials = "";
+
+    };
+
+//Event listeners for buttons
+    //functions to start quiz
+    start.addEventListener("click", startQuiz);
 
 // AS A coding boot camp student
 // I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
