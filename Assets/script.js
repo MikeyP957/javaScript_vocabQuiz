@@ -88,7 +88,6 @@
     function gameOver() {
         timeEl.style.display = "none";
         quiz.style.display = "none";
-        highScoreForm.style.display = "block";
         scoreRender();
         console.log("game over function is running")
     }
