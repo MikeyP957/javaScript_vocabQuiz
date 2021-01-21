@@ -41,11 +41,13 @@
 
      ];
    //scoring
-     var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
-     var scoreCard = document.getElementById("scoreContainer")
-     var userIntials = document.getElementById("initials")
-     var playerSubmit = document.getElementById("storeInitials")
+   var scoreCardText = document.querySelector("#scoreCardText");
+   var initialsForm = document.querySelector("#playerInitials");
+   var scoreList = document.querySelector("#scoreBoard");
+   var finalScore = document.querySelector("#playerScore");
      //this is the user information that will be appended to the cache
+     var scores = [];
+     var totalPoints = 9;
      var playerInfo = {
       score: 0,
       initials: "",
@@ -125,22 +127,28 @@
         scoreCard.innerHTML = "Score: " + score;
         console.log("scoreRender is running")
     }
-     
-    //save high scores
-    highscores.push(newScore);
-    window.localStorage.setItem("highscores", JSON.stringify(highscores));
+  
+    
 
-//Event listeners for buttons
-    //functions to start quiz
+
+
+
+    
+//     //save high scores
+//     highscores.push(newScore);
+//     window.localStorage.setItem("highscores", JSON.stringify(highscores));
+
+// //Event listeners for buttons
+//     //functions to start quiz
     
     start.addEventListener("click", startQuiz);
 
     // playerSubmit.addEventListener("click", )
     
-    function clearHighscores() {
-        window.localStorage.removeItem("highscores");
-        window.location.reload();
-      }
+    // function clearHighscores() {
+    //     window.localStorage.removeItem("highscores");
+    //     window.location.reload();
+    //   }
 // AS A coding boot camp student
 // I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
 // SO THAT I can gauge my progress compared to my peers
