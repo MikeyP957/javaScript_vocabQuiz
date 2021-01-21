@@ -9,6 +9,7 @@
    var choiceD = document.getElementById("D");
    var scoreCard = document.getElementById("scoreContainer")
    var userInput = document.getElementById("inputForm")
+   var highScoreForm = document.getElementById("highScores")
     // Selects element by class
     var timeEl = document.querySelector(".time");
     // Selects element by id
@@ -76,18 +77,17 @@
                 gameOver();
             }            
         }, 1000);;
-        start.style.display = "none";
         renderQuestion();
+        start.style.display = "none";
         quiz.style.display = "block";        
     }
-          
-    
+    //When the game is over form is appended to save highscores
     function gameOver() {
         timeEl.style.display = "none";
-        console.log("game over")
         quiz.style.display = "none";
-        
+        highScoreForm.style.display = "block";
         scoreRender();
+        console.log("game over function is running")
     }
    
     //functions for questions
@@ -107,9 +107,7 @@
         if(questionsArray[runningQuestion].answer == playerAnswer) {
             playerInfo.score++;
         }
-        else{
-            secondsLeft--;
-        }
+        else{secondsLeft--;}
 
         if(runningQuestion < lastQuestion){
             runningQuestion++;
@@ -128,8 +126,7 @@
     function scoreRender() {
         scoreCard.style.display = "block";
         let score = playerInfo.score;
-        scoreCard.innerHTML = "Score: " + score
-        userInput.style.display = "block"
+        scoreCard.innerHTML = "Score: " + score;
         console.log("scoreRender is running")
     }
 

@@ -37,17 +37,22 @@
                     </ul>                    
                 </div>                
             </div>
-            <div id="scoreContainer" style = "display: none;">
-                <!--input for initials-->
-                <form id="inputForm" class="d-flex">
-                    <input id="playerInitials" class="form-control me-2" type="search" placeholder="Initials" aria-label="Search">
+            
+            <!--container to put all high scores taken from local storage-->
+            <div id = "scoreContainer" class = "container" style = "display: none"></div>
+
+            <div id="highScores" class="container" style = "display: none;">
+                  <!--input for initials-->
+                  <form id="inputForm" class="d-flex" style = "display: none">
+                    <input  class="form-control me-2" type="search" placeholder="Initials" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Submit</button>
                   </form>
                 <!--start game over button-->
-                <!--clear high scores button-->
+                <ul>
+                    <li><button type="button" class="choice" id="restart">Play again?</button></li>
+                    <li><button type="button" class="choice" id="clearStorage">Clear Scoreboard</button></li>
+                </ul> 
             </div>
-            <!--container to put all high scores taken from local storage-->
-
         </section>
  
 
