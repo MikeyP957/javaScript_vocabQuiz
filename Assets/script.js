@@ -148,20 +148,42 @@
         }
       }
     // This function is being called below and will run when the page loads.
-function init() {
-    // Get stored scores from localStorage
-    var storedscores = JSON.parse(localStorage.getItem("scores"));
+     function init() {
+        // Get stored scores from localStorage
+        var storedscores = JSON.parse(localStorage.getItem("scores"));     
+        // If scores were retrieved from localStorage, update the scores array to it
+        if (storedscores !== null) {
+            scores = storedscores;
+        }    
+        // This is a helper function that will render scores to the DOM
+        highScoreRender();
+    }
+
+    function storeScores() {
+        // Stringify and set key in localStorage to scores array
+        localStorage.setItem("scores", JSON.stringify(scores));
+    }
+
+
+// Add submit event to form
+initialsForm.addEventListener("submit", function(event) {
+    event.preventDefault();
   
-    // If scores were retrieved from localStorage, update the scores array to it
-    if (storedscores !== null) {
-      scores = storedscores;
+    var playerInitials = scoreCardText.value.trim();
+  
+    // Return from function early if submitted playerInitials is blank
+    if (playerInitials === "") {
+      return;
     }
   
-    // This is a helper function that will render scores to the DOM
+    // Add new playerInitials to scores array, clear the input
+    scores.push(playerInitials);
+    scoreCardText.value = "";
+  
+    // Store updated scores in localStorage, re-render the list
+    storeScores();
     highScoreRender();
-  }
-
-
+  });
 
 
 
