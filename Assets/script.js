@@ -48,8 +48,11 @@
    var finalScore = document.querySelector("#playerScore");
      //this is the user information that will be appended to the cache
      var scores = [];
-     var totalPoints = playerScore;
+     //points gained while answering questions
+     
+     //point value appended with player initials
      var playerScore = 0;
+     
    //Timer
      var timeEl = document.querySelector(".time");
      // Selects element by id
@@ -138,10 +141,10 @@
           li.textContent = player;
           li.setAttribute("data-index", i);
       
-          var score = document.createElement("p");
-          score.textContent = totalPoints + " points";
+          var button = document.createElement("button");
+          button.textContent = "";
       
-          li.appendChild(score);
+          li.appendChild(button);
           scoreList.appendChild(li);
         }
       }
@@ -167,15 +170,17 @@
 initialsForm.addEventListener("submit", function(event) {
     event.preventDefault();
   
-    var playerInitials = scoreCardText.value.trim();
+    var playerInitials = scoreCardText.value.trim()
+     var scoreCard = playerScore
+    
   
     // Return from function early if submitted playerInitials is blank
-    if (playerInitials === "") {
+    if (playerInitials === "" || scoreCard === NaN) {
       return;
     }
   
     // Add new playerInitials to scores array, clear the input
-    scores.push(playerInitials);
+    scores.push(playerInitials + " " + scoreCard + "points");
     scoreCardText.value = "";
   
     // Store updated scores in localStorage, re-render the list
