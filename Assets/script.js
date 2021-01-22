@@ -65,6 +65,8 @@
      //the index of the last question in questions array
      var lastQuestion = questionsArray.length - 1;
     
+     //reload button
+     var reload = document.getElementById("playAgain");
 //Functions
     //function for timer
     function startQuiz(){
@@ -209,5 +211,7 @@ scoreList.addEventListener("click", function(event) {
   init()
       
 start.addEventListener("click", startQuiz);
-
+reload.addEventListener("click", function(){
+    window.location.reload()
+});
   
