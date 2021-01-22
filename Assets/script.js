@@ -41,17 +41,15 @@
 
      ];
    //scoring
+   var scoreBoardDisplay = document.getElementById("scoreBoardDisplay")
    var scoreCardText = document.querySelector("#scoreCardText");
    var initialsForm = document.querySelector("#playerInitials");
    var scoreList = document.querySelector("#scoreBoard");
    var finalScore = document.querySelector("#playerScore");
      //this is the user information that will be appended to the cache
      var scores = [];
-     var totalPoints = 9;
-     var playerInfo = {
-      score: 0,
-      initials: "",
-      };
+     var totalPoints = playerScore;
+     var playerScore = 0;
    //Timer
      var timeEl = document.querySelector(".time");
      // Selects element by id
@@ -88,6 +86,7 @@
     function gameOver() {
         timeEl.style.display = "none";
         quiz.style.display = "none";
+        scoreBoardDisplay.style.display = "block"
         scoreRender();
         console.log("game over function is running")
     }
@@ -106,7 +105,7 @@
    
     function checkAnswer(playerAnswer){
         if(questionsArray[runningQuestion].answer == playerAnswer) {
-            playerInfo.score++;
+            playerScore++;
         }
         else{secondsLeft--;}
 
@@ -122,7 +121,7 @@
     //show the score
     function scoreRender() {
         scoreCard.style.display = "block";
-        let score = playerInfo.score;
+        let score = playerScore;
         scoreCard.innerHTML = "Score: " + score;
         console.log("scoreRender is running")
     }
