@@ -144,6 +144,7 @@
           li.setAttribute("data-index", i);
       
           var button = document.createElement("button");
+          
           button.textContent = "Delete score";
       
           li.appendChild(button);
@@ -212,6 +213,6 @@ scoreList.addEventListener("click", function(event) {
       
 start.addEventListener("click", startQuiz);
 reload.addEventListener("click", function(){
-    window.location.reload()
+window.location.reload()
 });
   
