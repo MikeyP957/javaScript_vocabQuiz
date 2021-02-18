@@ -144,7 +144,8 @@
           li.setAttribute("data-index", i);
       
           var button = document.createElement("button");
-          
+          button.classList.add("btn")
+          button.classList.add("deleteBtn")
           button.textContent = "Delete score";
       
           li.appendChild(button);
