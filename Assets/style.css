@@ -9,7 +9,11 @@ li{
 }
 .startContainer{
     background-color: aqua;
+    padding: 5px;
 }
 header{
     margin: 20px;
+}
+#scoreboard{
+    padding: 15px;
 }

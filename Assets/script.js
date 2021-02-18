@@ -48,8 +48,7 @@
    var finalScore = document.querySelector("#playerScore");
      //this is the user information that will be appended to the cache
      var scores = [];
-     //points gained while answering questions
-     
+    
      //point value appended with player initials
      var playerScore = 0;
      
