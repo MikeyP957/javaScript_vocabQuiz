@@ -4,8 +4,11 @@ h1 {
 li{
     margin: 10px;
 }
-.deleteBtn{
+
+.btn{
     margin: 10px;
+    background-color: blueviolet;
+    color:yellow; 
 }
 .startContainer{
     background-color: aqua;
@@ -16,4 +19,4 @@ header{
 }
 #scoreboard{
     padding: 15px;
-}
+    }
