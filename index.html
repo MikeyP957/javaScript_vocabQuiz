@@ -13,7 +13,7 @@
 </head>
 <body>
      <!--Header with name of the game-->
-    <header> <h1>Game</h1> </header>
+    <header class="container"> <h1>Game</h1> </header>
    
     <!--Timer-->
     <h1 class="time" style= "text-align:center;"></h1>
@@ -22,7 +22,10 @@
     <!--Container where the game is played and inital message of rules
         and start button-->
         <section class="container">
-            <div id="start"> <h5>Click here to Start the quiz!</h5></div>
+            <div class="row">
+                <div id="start" class= "startContainer col-3"> <h5>Click here to Start the quiz!</h5></div>
+            </div>
+            
             <!--The quiz goes here-->
             <div id="quiz" style = "display: none;">
                 <div id="question">

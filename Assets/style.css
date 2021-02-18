@@ -7,3 +7,9 @@ li{
 .deleteBtn{
     margin: 10px;
 }
+.startContainer{
+    background-color: aqua;
+}
+header{
+    margin: 20px;
+}
