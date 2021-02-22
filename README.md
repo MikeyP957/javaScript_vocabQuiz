@@ -5,6 +5,9 @@ Utelizing JavaScript and web API's to create an interactive game and store infor
 
 This application leads the user through a timed multiple choice quiz. At the end of the quiz the user can save their score with their own name or initials. They may then restart the game to try the quiz again to save another score. A user can easily delete any score they choose off of the score board. 
 
+## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[link](https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba#the-mit-license)
 ## Functionality
 When the page is initiall loaded there is a title and a message on the screen that reads, "click here to start the quiz."
 
